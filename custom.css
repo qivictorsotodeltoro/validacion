@@ -1,0 +1,63 @@
+/* Fondo general de la presentación */
+.reveal {
+  background-color: #fefdf8;
+  color: #265129;
+}
+
+/* Fondo de cada slide */
+.reveal .slides section {
+  background-color: #fefdf8;
+  color: #265129;
+}
+
+/* Títulos */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: #265129;
+  font-weight: 600;
+}
+
+/* Texto normal */
+.reveal p,
+.reveal li {
+  color: #265129;
+}
+
+/* Blockquotes (tus frases doctrinales) */
+.reveal blockquote {
+  border-left: 4px solid #265129;
+  padding-left: 1em;
+  color: #265129;
+}
+
+/* Enlaces */
+.reveal a {
+  color: #265129;
+  text-decoration: underline;
+}
+
+/* Código (si luego usas estadística) */
+.reveal code {
+  color: #265129;
+  background-color: rgba(38, 81, 41, 0.08);
+}
+
+/* Logo fijo en esquina superior derecha */
+.reveal::after {
+  content: "";
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  width: 110px;              /* ajusta aquí */
+  height: 110px;
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  opacity: 0.9;              /* sobrio, no invasivo */
+  z-index: 1000;
+  pointer-events: none;      /* no interfiere con clicks */
+}
+

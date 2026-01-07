@@ -1,0 +1,982 @@
+---
+title: "Validación en Ciencias Aplicadas, Ingeniería y Medio Ambiente"
+subtitle: "¿Qué significa validar, cómo se hace, para qué y para quién?"
+author: "Q.I. Víctor Soto Del Toro"
+date: "2026-01-03"
+
+format:
+  revealjs:
+    theme: simple
+    css: custom.css
+    slide-number: true
+    incremental: true
+    transition: fade
+    center: false
+    slide-height: 900
+    slide-width: 1600
+    df-encoding: UTF-8
+
+execute:
+  echo: false
+  warning: false
+  message: false  
+---
+
+## Análisis vs Validación {.center}
+
+> **El análisis nos dice si estamos bien.**\
+> **La validación nos dice si vamos a estar bien.**
+
+Q.I. Víctor Soto Del Toro
+
+## Problemas, Hipótesis, Pruebas, Análisis y Soluciones {.center}
+
+> **Sin problema, no hay hipótesis.**\
+> **Sin hipótesis, no hay pruebas.**\
+> **Sin pruebas, no hay análisis.**\
+> **Y sin análisis, no hay solución.**
+
+Q.I. Víctor Soto Del Toro
+
+# Bienvenida
+
+## En esta presentación solo nos interesa responder esto... {.center}
+
+## ¿Qué significa validar, cómo se hace, para qué y para quién? {.center}
+
+## Lo que veremos {.center}
+
+1.  Significado y beneficios de la validación.
+2.  Lo que sí y lo que no se necesita validar.
+3.  Historia y origen de la necesidad humana de validar.
+4.  Motivos, objetivos, propósitos y contexto de aplicación.
+5.  Objeto, sentido, mecanismo y formato.
+6.  Reglas, decisiones, exigencias, responsabilidades, errores y riesgos.
+7.  Finalidad y **beneficiario**.
+
+## Comenzamos... {.center}
+
+# Parte I
+
+## La Validación: ¿Cómo Nos Beneficia? {.center}
+
+## En el contexto de ciencias aplicadas, <br>¿qué significa validar?</br> {.center}
+
+Antes de decir qué es validar, veamos lo que NO es:
+
+-   No es probar verdades.
+
+-   No es demostrar que algo es cierto.
+
+-   No es confirmar que tenemos razón.
+
+-   No es presentar evidencia.
+
+-   No es obtener resultados.
+
+## En ciencias exactas e ingeniería, <br>¿qué debemos entender por validar?</br> {.center}
+
+Antes de establecer su esencia semántica, validar implica aceptar que:
+
+-   El conocimiento tiene limitaciones.
+
+-   El fenómeno de interés exhibe complejidad.
+
+-   Las mediciones sufren perturbaciones.
+
+-   Los datos son una proyección parcial del fenómeno.
+
+-   La incertidumbre no se elimina: se estima, se gestiona y se controla.
+
+## Técnicamente, ¿qué es entonces, validar? {.center}
+
+En ciencias aplicadas y proyectos tecnológicos, validar es formalmente esto:
+
+-   [**Asegurarse**]{.underline} **de que los procedimientos que conforman el método son técnicamente adecuados para lograr el propósito declarado del cliente: [tomar decisiones bajo condiciones explícitas de uso permitido.]{.underline}**
+
+## ¿Cómo podríamos entender la esencia de validar, de manera más simple? {.center}
+
+Se dice que un significado se explica mejor por un diálogo:
+
+-   *"¿En verdad sabes lo que vas a hacer?"*
+-   *"Sí lo sé."*
+-   *"¿Cómo estás tan seguro?"*
+-   *"Lo validé".*
+-   *"¿Lo validaste? ¿A qué te refieres?"*
+-   *"Lo diseñé, lo calculé y definí cómo decidir con ello."*
+-   *"Muéstrame."*
+
+## ¿Cuál: Análisis, Estudio o Validación? {.center}
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: 2_analisis_estudio_validacion-plot
+#| dependson: p2_analisis_estudio_validacion.rds
+
+library(plotly)
+p <- readRDS("p2_analisis_estudio_validacion.rds")
+p
+```
+
+
+
+# Parte II
+
+## ¿Se Necesita Validar Siempre? {.center}
+
+## ¿Qué proyectos NO requieren validación formal? {.center}
+
+Existen proyectos legítimos donde la validación **no es necesaria**.
+
+Por ejemplo, cuando el proyecto:
+
+-   **Tiene fines exploratorios o de aprendizaje**
+-   **Busca generar hipótesis, no decisiones**
+-   **Es descriptivo, histórico o retrospectivo**
+-   **No conduce a acciones técnicas obligatorias**
+
+## ¿Qué proyectos NO requieren validación formal? {.center}
+
+Cuando el proyecto:
+
+-   **No está expuesto a auditoría, regulación o riesgo operativo**
+
+-   **Su resultado no será usado para decidir ni intervenir**
+
+-   En estos casos, el análisis es valioso pero **no constituye validación**, porque **no existe una regla de decisión que autorizar**.
+
+## Debido a lo anterior, afirmamos lo siguiente: {.center}
+
+1.  La validación no atiende ni se ocupa del conocimiento académico ni principios conceptuales fundacionales.
+
+2.  En consecuencia, no se validan abstracciones teóricas ni modelos ideales fuera de un contexto de uso aplicado.
+
+3.  El trabajo académico se formula, se publica, se examina, se estudia y se divulga; pero no se valida porque no lo necesita.
+
+## ¿Qué tipo de proyectos SÍ necesitan validación? {.center}
+
+La validación es necesaria cuando el proyecto:
+
+-   **Conduce a decisiones técnicas con consecuencias materiales**
+
+-   **Opera bajo incertidumbre medible**
+
+-   **Implica riesgo regulatorio, operativo, económico o ambiental**
+
+## ¿Qué tipo de proyectos SÍ necesitan validación? {.center}
+
+-   **Debe ser defendible ante auditorías, terceros o autoridades**
+-   **Entrega información que otros usarán para decidir o actuar**
+-   **En estos casos, analizar no es suficiente**.
+-   [**Sin validación**]{.underline}**, la decisión aún existe, pero carece de legitimidad científica**.
+
+## Debido a lo anterior, afirmamos lo siguiente: {.center}
+
+1.  La validación pertenece al ámbito de la aplicación, el experimento, las metodologías y los proyectos que tienen objetivos materiales y responsabilidades contractuales.
+
+2.  La validación rinde información auditable y confiable que documenta el diseño procedimental, naturaleza física y conducta cuantitativa del objeto tangible que producirá valor agregado.
+
+3.  Su dominio propio (estrictamente delimitado) es la aplicación práctica y regulatoria que sirve al **cliente**.
+
+## 1. Distribuciones: Expresión Gráfica Mínima de [Datos REGULARES]{.underline}
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: p3_distribucion_univariable_normal-plot
+#| dependson: p3_distribucion_univariable_normal.rds
+
+library(plotly)
+p <- readRDS("p3_distribucion_univariable_normal.rds")
+p
+
+```
+
+## 2. Distribuciones: Expresión Gráfica Mínima de [Datos IRREGULARES]{.underline}
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: p4_distribucion_univariable_lognormal-plot
+#| dependson: p4_distribucion_univariable_lognormal.rds
+
+library(plotly)
+p <- readRDS("p4_distribucion_univariable_lognormal.rds")
+p
+
+```
+
+
+# Parte III
+
+## Validación y su Origen Ético-Profesional {.center}
+
+## Validación como contrato epistemológico {.center}
+
+Una forma rigurosa de entender la validación es esta:
+
+-   Validar es establecer un contrato autoimpuesto: un compromiso formal que exige **igualdad entre lo que afirmamos conocer y lo que estamos dispuestos a garantizar al cliente.**
+
+-   Leída y formulada con cuidado, toda validación debería contener **una promesa (implícita al menos) acerca del comportamiento futuro del procedimento analítico de toma de decisiones técnicas.**
+
+## La epistēmē como núcleo de la validación {.center}
+
+-   Validar no es un trámite administrativo.
+
+-   Es una **afirmación técnica** que funciona como **autorización**.
+
+-   Por eso, su naturaleza es **epistémica**.
+
+-   Así, validar implica asumir un **compromiso ético y profesional**.
+
+-   La pregunta es: ¿quién autoriza a quién para hacer qué?
+
+-   **El validador autoriza al cliente para tomar decisiones técnicas y operativas, cotidianamente, bajo incertidumbres estimadas, conocidas y declaradas.**
+
+## El compromiso epistémico contraído {.center}
+
+-   Queda registrado en un documento auditable: **el informe.**
+
+-   Está inseparablemente ligado a la identidad profesional del validador.
+
+-   Obliga no por ley, sino por **responsabilidad epistémica** frente al uso futuro del conocimiento autorizado.
+
+-   El cliente confía en la garantía de que el conocimiento generado es **válido, es decir: adecuado para su propósito**.
+
+-   La reputación del validador está en juego.
+
+## ¿Epistēmē y validación? {.center}
+
+-   Desde Aristóteles, la *epistēmē* designa el saber que conoce **causas, alcances y límites** y que además, se somete a prueba.
+
+-   No basta con conocer: para ser válido, el conocimiento manifestado **debe** **resistir el contraste con la realidad**.
+
+-   Por eso, las validaciones contemporáneas en ciencias aplicadas y tecnología, para ser serias y honestas, deben heredar esta tradición: desde Grecia hasta Popper.
+
+## Episteme + Falsabilidad = Validación {.center}
+
+-   La validación no se ocupa de ideas, intuiciones o sospechas. Tampoco teorías ni modelos abstractos.
+
+-   Se ocupa de **hipótesis falsables**, capaces de admitir y resistir pruebas.
+
+-   Si una hipótesis resiste, **producirá conocimiento confiable e información útil de valor al negocio**.
+
+-   Si el cliente no está dispuesto a someter sus hipótesis a prueba, el validador no tiene nada que ofrecerle.
+
+## Para ser válida, la decisión técnica debe ser [**falsable**]{.underline} {.center}
+
+-   **Afirmar que un hecho es creíble o aceptable** no requiere validación: basta con declararlo y que alguien lo acepte.
+
+-   **Validar ese mismo hecho** exige formular una hipótesis y someterla a prueba bajo condiciones explícitas: el resultado solo puede ser válido o no válido.
+
+-   Por eso, en ciencias aplicadas no hablamos de verdad ni falsedad, sino de validez.
+
+-   A esto nos referimos con falsabilidad: al ser puesta a prueba, [**la decisión puede fallar.**]{.underline}
+
+## La Prueba de Hipótesis {.center}
+
+Para que un procedimiento técnico produzca decisiones válidas en un contexto de incertidumbre monitoreada:
+
+-   El análisis requiere una hipótesis explícita.
+
+-   Se requiere que la tesis emerja del **experimento que pone la hipótesis a prueba**.
+
+-   La validación es el producto final que garantiza al cliente **lo** **que puede esperar que ocurra en la práctica cotidiana**.
+
+-   Esto permite tomar decisiones técnicas con responsabilidad, si las condiciones iniciales se mantienen.
+
+-   Así, cada decisión será válida porque **una tesis la respalda**.
+
+## 1. ¿Cuál es la prueba de hipótesis apropiada para [DATOS REGULARES?]{.underline}
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: 5_solapamiento_distribuciones_normales-plot
+#| dependson: p5_solapamiento_distribuciones_normales.rds
+
+library(plotly)
+p <- readRDS("p5_solapamiento_distribuciones_normales.rds")
+p
+
+```
+
+## 2. ¿Cuál es la prueba de hipótesis apropiada para [DATOS IRREGULARES]{.underline}?
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: p6_solapamiento_distribuciones_lognormales-plot
+#| dependson: p6_solapamiento_distribuciones_lognormales.rds
+
+library(plotly)
+p <- readRDS("p6_solapamiento_distribuciones_lognormales.rds")
+p
+
+```
+
+# Parte IV
+
+## La Validación: <br><br>Motivo, Propósito, Beneficio y Aplicación {.center}
+
+## ¿Qué es lo que más le conviene al cliente? {.center}
+
+Para producir información que justifique decisiones técnicas tomadas con objetividad y responsabilidad, existen tres mecanismos distintos, cada uno con un alcance y un valor diferente:
+
+1.  Análisis
+
+2.  Estudio
+
+3.  Validación
+
+## El Análisis {.center}
+
+-   El análisis describe el estado actual del fenómeno.
+
+-   Responde: ¿cómo estamos?
+
+## El Estudio {.center}
+
+-   El estudio explora relaciones, causas y escenarios posibles.
+
+-   Responde: ¿por qué ocurre y qué podría pasar?
+
+## La Validación {.center}
+
+-   La validación autoriza formalmente el uso del conocimiento para tomar decisiones técnicas bajo incertidumbre.
+
+-   Responde: ¿podemos actuar responsablemente y con qué riesgo?
+
+## Jerarquía de valor {.center}
+
+El más apropiado de los tres para [**toma de decisiones cotidianas**]{.underline} es la validación, porque:
+
+-   Es el único mecanismo que habilita decisiones operativas y regulatorias.
+
+-   Define reglas de decisión, límites de validez y riesgos aceptables.
+
+-   Produce credibilidad técnica auditable, no solo entendimiento.
+
+-   Un análisis informa. Un estudio orienta. La validación autoriza.
+
+## ¿Es la regresión lineal lo más adecuado para [**estimar riesgo entre dos variables**]{.underline}?
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: p7_distribucion_eliptica_bivariada_95-plot
+#| dependson: p7_distribucion_eliptica_bivariada_95.rds
+
+library(plotly)
+p <- readRDS("p7_distribucion_eliptica_bivariada_95.rds")
+p
+
+```
+
+
+# Parte V {.center}
+
+## Validación y Evidencia Formal {.center}
+
+## Las tres preguntas de la validación {.center}
+
+Todo acto de validación responde, explícita o implícitamente, a tres preguntas fundamentales:
+
+1.  **¿Qué estoy representando?**
+
+2.  **¿Para qué lo estoy representando?**
+
+3.  **¿Hasta dónde respondo por ello?**
+
+Veamos cada una.
+
+## Pregunta 1: ¿Qué estoy representando? {.center}
+
+-   **Fenómeno:** hechos observables con dinámica y variables propias.
+
+-   **Sistema:** componentes interconectados que generan el comportamiento.
+
+-   **Proceso:** evolución temporal que produce cambios medibles.
+
+-   **Procedimiento:** operaciones diseñadas para medir, intervenir o controlar.
+
+## Pregunta 2: ¿Para qué representarlo? {.center}
+
+-   **Monitoreo:** vigilar la conducta del fenómeno o proceso en el tiempo.
+
+-   **Control:** promover la intervención operativa sobre el fenómeno o proceso.
+
+-   **Predicción:** anticipar comportamientos dentro de un rango definido.
+
+-   **Decisión:** sustentar actos técnicos con consecuencias materiales.
+
+-   **Comunicación:** informar resultados y [**rendir cuentas**]{.underline} de forma metódica y trazable.
+
+## Pregunta 3: ¿Hasta dónde respondo? {.center}
+
+-   **Rango de aplicación:** intervalo explícito de trabajo.
+
+-   **Condiciones de operación:** entorno, configuraciones y supuestos bajo los cuales el método funciona.
+
+-   **Incertidumbre cuantificada:** margen de error asociado a mediciones y modelos.
+
+-   **Fallos conocidos:** circunstancias en las que el método deja de ser confiable.
+
+Estas respuestas delimitan el **dominio de validez**. Ignorarlas, o extrapolar fuera de él no es un error técnico inocente: **es una falta de responsabilidad profesional**.
+
+## El compromiso con la validez {.center}
+
+Sin la integridad que la validación exige:
+
+-   Los resultados se vuelven narrativos y superficiales.
+
+-   Se pierde la capacidad de decidir bajo incertidumbre.
+
+-   Los modelos dejan de representar y se confunden con la realidad.
+
+-   La evidencia pierde credibilidad frente a terceros calificados.
+
+Hablar de validación sin asumir este compromiso conduce inevitablemente al **fraude técnico**.
+
+## Validación y Formalidad Profesional {.center}
+
+La validación tiene límites. Pero esos límites **no la debilitan**: la vuelven **honesta, auditable y utilizable**.
+
+-   Validar es el acto final mediante el cual el conocimiento técnico deja de ser descriptivo y se convierte en **referencia oficial para decidir**.
+
+-   Decidir sin validar no es una omisión técnica: **es una práctica informal y profesionalmente irresponsable.**
+
+## El sentido práctico de validar {.center}
+
+En ciencias aplicadas, validar no es decir:
+
+-   *“Esta es la verdad y aquí están los datos.”*
+
+Validar es afirmar:
+
+-   *“Bajo estas condiciones, con esta metodología, para este propósito y dentro de estas limitaciones explícitas, asumo y firmo la responsabilidad del uso aplicado de este conocimiento técnico. El cliente puede proceder sin temor.”*
+
+## Prueba de Hipótesis Multivariables {.stretch}
+
+<br>
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: p1_elliopsoid-plot
+#| dependson: p1_ellipsoid_hotelling.rds
+
+library(plotly)
+p <- readRDS("p1_ellipsoid_hotelling.rds")
+p
+```
+
+
+# Parte VI
+
+## La Regla de Decisión: <br><br>Validaciones para Tomar Decisiones {.center}
+
+## Decisión y validación {.center}
+
+En el lenguaje cotidiano y administrativo, la *decisión* suele entenderse como un acto humano influido por:
+
+-   Valores
+
+-   Intereses
+
+-   Opciones
+
+-   Poder
+
+-   Percepción
+
+-   Contexto social y político
+
+La validación no se ocupa de este tipo de decisión.
+
+## Toma de decisiones humanísticas {.center}
+
+-   Acto volitivo, contextual y situado en percepción.
+
+-   Influido por valores, preceptos, convenciones, incentivos, convicciones, preferencias, ideologías o sesgos cognitivos.
+
+-   Propio de la política, la ley, la administración, la psicología y las humanidades.
+
+-   No formalizable ni auditable bajo criterios técnico-experimentales.
+
+Pueden explicarse, razonarse o justificarse.
+
+Sin embargo, no son validables científicamente.
+
+## Toma de decisiones validadas {.center}
+
+-   Acto calculado, algorítimico y predefinido.
+
+-   Establecido antes de la ejecución del análisis o la operación.
+
+-   Independiente de preferencias, intereses o juicios personales.
+
+-   Basado en criterios explícitos, cuantificables y verificables.
+
+-   Auditable, reproducible y defendible ante terceros.
+
+Este es el dominio propio de la validación científica para toma de decisiones técnicas.
+
+## La decisión en ciencias aplicadas {.center}
+
+En ciencias aplicadas y aseguramiento de calidad:
+
+-   La decisión no es deliberativa.
+
+-   No es negociable.
+
+-   No es subjetiva.
+
+-   No es arbitraria.
+
+-   No depende de opinión personal.
+
+-   No se resuelve por debate o retórica.
+
+Es la consecuencia formal de aplicar un método bajo una regla técnica explícita.
+
+## La Regla de Decisión {.center}
+
+Toda decisión técnica ocurre mediante una **regla de decisión**.
+
+-   Una regla de decisión es:
+
+-   **Un criterio formal que conecta los datos con las acciones bajo incertidumbre explícita, [previamente]{.underline} cuantificada.**
+
+## El Momento de la Decisión {.center}
+
+¿Cuándo comienza a existir la decisión validada?
+
+-   Para que una decisión sea validable, la regla debe existir **ANTES** del análisis (**ex-ante**).
+
+-   Si la regla se define después, el análisis deja de ser validatorio y se vuelve **justificativo** (**post-hoc**).
+
+-   Un auditor, regulador o revisor técnico solo preguntará una cosa:
+
+-   *“Muéstrame la regla de decisión y dime cuándo fue definida.”*
+
+## Ejemplos de actividades sujetas a reglas de decisión {.center}
+
+-   Aceptar o rechazar un lote
+
+-   Liberar o detener un proceso
+
+-   Aprobar o descartar un resultado
+
+-   Continuar o interrumpir una operación
+
+-   Confirmar el éxito o fracaso de una meta
+
+Todas ellas son **decisiones técnicas**.
+
+## Regla de decisión e incertidumbre {.center}
+
+Toda decisión técnica sujeta a validación está expuesta a:
+
+-   Error tipo I
+
+-   Error tipo II
+
+-   Para administrar la incertidumbre, eliminar la arbitrariedad y habilitar la objetividad, la clasificación **conforme / no conforme** debe derivarse siempre de un **diseño estocástico explícito**.
+
+-   [NOTA:]{.underline} La estadística **no decide por nosotros**. **Solo hace que la regla de decisión se pueda aplicar.**
+
+## ¿Reglas de Decisión Multivariable? {.center .compact}
+
+#### Gráficos Parcoord + Hotelling T^2^ + Q de Jackson
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: parcoord-plot
+#| dependson: p1_parcoord.rds
+
+library(plotly)
+p <- readRDS("p1_parcoord.rds")
+#p
+
+p %>%
+layout(
+       width = 1000,
+       height = 600,
+       margin = list(
+                     l = 40,
+                     r = 40,
+                     t = 60,
+                     b = 40)
+      )
+p
+```
+
+
+
+
+
+
+# Parte VII
+
+## Decisión, Riesgo y Error: <br><br> Estimaciones y Expectativas {.center}
+
+## ¿Para qué nos sirve la estadística inferencial en toma de decisiones? {.center}
+
+En validación de decisiones técnicas, la estadística inferencial nos revela **el riesgo de decidir mal**.
+
+-   Ese riesgo **se estima y se cuantifica**.
+-   Se expresa como probabilidad o porcentaje.
+-   No es producto de la intuición ni la opinión.
+-   Decir: "*Pienso que el riesgo es 30%*" [**no es válido.**]{.underline}
+
+## Error y riesgo de decisión {.center}
+
+Cuando decimos que "***una decisión técnica se toma bajo incertidumbre"***, la idea subyacente es:
+
+-   **Error tipo I** → Rechazar lo conforme
+-   **Error tipo II** → Aceptar lo no conforme
+
+Estos errores:
+
+-   No pueden eliminarse.
+-   Tienen **costos distintos** según el propósito.
+-   Deben **gestionarse**. Nunca ignorarse.
+
+## ¿Qué NO se valida? {.center}
+
+Por todo lo anterior, la validación no atiende:
+
+-   Verdades ni postulados
+-   Teorías y modelos ideales
+-   Ecuaciones en abstracto
+-   Cifras o resultados aislados
+-   Interpretaciones narrativas
+
+La ciencia aplicada opera con **datos medidos bajo incertidumbre**, donde el error es **cuantificable y gestionable por la vía estocástica**.
+
+## ¿Qué SÍ se valida entonces? {.center}
+
+La validación, como función del aseguramiento de calidad, **evalúa y autoriza** que una **regla de decisión específica**:
+
+-   Se utilice de forma responsable.
+-   Se ejecute mediante una metodología **predefinida**.
+-   Opere dentro de un **dominio explícito**.
+
+Una regla de decisión es aplicable **si y solo si** la incertidumbre de los datos ha sido **cuantificada estadísticamente**, mediante técnicas inferenciales.
+
+-   **Solo entonces, lo que se valida [es la regla.]{.underline}**
+
+## Nota de alcance {.center}
+
+En distintas disciplinas se validan correctamente **métodos, procesos, modelos, datos y procedimientos.**
+
+En **ciencias aplicadas**, todo ello converge en un solo punto:
+
+**La decisión.** No como idea, sino como evento calculado.
+
+Esta exposición no afirma que *solo* las reglas de decisión sean validables. Se afirma esto:
+
+**En la práctica, la validez se expresa como una regla que gobierna decisiones exigibles a un responsable firmante.**
+
+Ahí, cuando hay regla validada, los datos **obligan a actuar**.
+
+Sin regla habrá acción, pero sin responsabilidad asignable.
+
+## Regla de Decisión y Prueba de Hipótesis {.center}
+
+La **regla de decisión** conecta el **dato que resulte de la medición** con la **acción concreta** a tomar. (Sin regla, esa conexión es arbitraria, subjetiva y selectiva.)
+
+Así se controlan los errores estadísticos I y II.
+
+-   **Pasos de validación**:
+
+    1.  Diseñar la regla primero (ex-ante): aquí la regla decide.
+
+    2.  Seleccionar la prueba estadística que cuantificará el riesgo.
+
+    3.  Asegurar que cada dato cumpla el riesgo aceptado; esto garantiza la acción correcta del responsable.
+
+## Pruebas de Hipótesis Multivariables {.center}
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: T2Q-plot
+#| dependson: p_T2Q.rds
+
+library(plotly)
+p <- readRDS("p_T2Q.rds")
+#p
+
+p %>%
+layout(
+       width = 1000,
+       height = 600,
+       margin = list(
+                     l = 40,
+                     r = 40,
+                     t = 60,
+                     b = 40)
+      )
+p
+```
+
+# Parte VIII
+
+## Validación = Autorización {.center}
+
+## El valor máximo de la validación {.center}
+
+La validación no existe para analizar datos ni para producir resultados interesantes.
+
+Existe para esto:
+
+-   **Autorizar reglas de decisión técnicas que operan bajo incertidumbre conocida y riesgo aceptado.**
+
+## Validar es autorizar el uso cotidiano de reglas de decisión {.center}
+
+Validar es el mayor valor agregado que un científico, ingeniero o especialista puede aportar a la organización que lo contrata, porque permite:
+
+-   Estabilidad operativa
+
+-   Continuidad en el tiempo
+
+-   Decisiones defendibles
+
+-   Resultados anticipables
+
+## Sin validación no hay regla de decisión {.center}
+
+Un análisis puede ser correcto, impecable y sofisticado.
+
+Pero si:
+
+-   No define una regla de decisión.
+
+-   No cuantifica riesgo.
+
+-   No declara límites de uso.
+
+Entonces:
+
+-   No es validación (*ex-ante*). Es análisis (*post-hoc*).
+
+-   La estadística inferencial no decide. Hace que la regla sea operable para [**que dicha regla sea quien decida.**]{.underline}
+
+## ¿Qué se gana al validar? {.center}
+
+La validación no promete certeza ni ausencia de error.
+
+Lo que sí garantiza es:
+
+-   Eliminación de arbitrariedad
+
+-   Control explícito del riesgo
+
+-   Credibilidad ante auditorías y terceros
+
+-   Responsabilidad técnica clara
+
+-   Eso es: [**Aseguramiento.**]{.underline} [**Estandarización.**]{.underline} [**Imparcialidad.**]{.underline} [**Profesionalismo.**]{.underline}
+
+## La Validación como Protección {.center}
+
+-   La validación **no elimina el riesgo**.
+
+-   Lo **hace visible, cuantificable y administrable**.
+
+-   El usuario acepta que la regla **puede fallar** según sean las magnitudes del riesgo e incertidumbre.
+
+-   Así, aunque la regla falle, la validación aún protege la decisión porque el usuario **es consciente, está informado, conoce y aceptó la magnitud del riesgo cuantificado.**
+
+-   El contrato espitemológico exige la aceptación del riesgo.
+
+## Regla de Decisión Multivariable 1 - T^2^ {.center}
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: T2-plot
+#| dependson: p_T2.rds
+
+library(plotly)
+p <- readRDS("p_T2.rds")
+#p
+
+p %>%
+layout(
+       width = 1000,
+       height = 600,
+       margin = list(
+                     l = 40,
+                     r = 40,
+                     t = 60,
+                     b = 40)
+      )
+p
+```
+
+## Regla de Decisión Multivariable 2 - Q {.center}
+
+```{r}
+
+#| echo: false
+#| warning: false
+#| message: false
+#| results: hide
+#| cache: false
+#| label: Q-plot
+#| dependson: p_Q.rds
+
+library(plotly)
+p <- readRDS("p_Q.rds")
+#p
+
+p %>%
+layout(
+       width = 1000,
+       height = 600,
+       margin = list(
+                     l = 40,
+                     r = 40,
+                     t = 60,
+                     b = 40)
+      )
+p
+```
+
+# Cierre Final
+
+## ¿Validar o no validar? {.center}
+
+A menos que sea por contrato o normatividad, nadie está obligado a validar nada: hacerlo es totalmente opcional.
+
+-   Aún así, quien decida no hacerlo necesita enterarse de que ha elegido esto: [**apostar.**]{.underline}
+
+-   Aunque ambas posturas, validación y apuesta, se interesan por conocer el futuro, la única diferencia es esta:
+
+-   **Mientras [el usuario de la regla]{.underline} conoce y acepta los riesgos, el apostador los ignora y los niega.**
+
+-   ¿Validar o no validar?... La decisión final es suya.
+
+# Gracias
+
+Presentado por [Q. I. Víctor Soto Del Toro](https://www.linkedin.com/in/qivictorsotodeltoro/)
+
+# Fuentes
+
+## Bibliografía fundacional <br>(como raíces conceptuales) {.center}
+
+**Aristóteles**\
+*Posterior Analytics* (ca. 350 a.C.)\
+— Fundamento de *epistēmē*: conocimiento válido como saber con causa, alcance y límite.
+
+**Karl R. Popper**\
+*The Logic of Scientific Discovery* (1959)\
+— Falsabilidad, contraste empírico y rechazo de la certeza absoluta como criterio científico.
+
+##  {.center}
+
+**Jerzy Neyman & Egon Pearson**\
+*On the Problem of the Most Efficient Tests of Statistical Hypotheses* (1933)\
+— Reglas de decisión estadísticas, errores tipo I y II, control explícito del riesgo.
+
+**Abraham Wald**\
+*Statistical Decision Functions* (1950)\
+— Teoría formal de decisiones bajo incertidumbre y riesgo cuantificado.
+
+**Leonard J. Savage**\
+*The Foundations of Statistics* (1954)\
+— Probabilidad como herramienta para decidir bajo incertidumbre, no como verdad absoluta.
+
+##  {.center}
+
+**W. Edwards Deming**\
+*Out of the Crisis* (1982)\
+— Variabilidad, control estadístico y toma de decisiones operativas en sistemas reales.
+
+**Thomas S. Kuhn**\
+*The Structure of Scientific Revolutions* (1962)\
+— Naturaleza histórica, no dogmática, de la validación del conocimiento científico.
+
+##  {.center}
+
+**George E.P. Box, William G. Hunter, J. Stuart Hunter**\
+*Statistics For Experimenters* (1978) - Establece que el valor de un modelo estadístico no está en su verdad, sino en su capacidad para guiar decisiones operativas bajo riesgo conocido.
+
+**Imre Lakatos**\
+*The Methodology of Scientific Research Programmes* (1978)\
+— Evaluación racional de métodos y reglas más allá de recetas normativas.
+
+## {.center}
+
+*Síntesis del autor: la validación como autorización explícita del uso responsable de reglas de decisión técnicas bajo incertidumbre cuantificada.*
+
+## De dónde **NO** viene este marco {.center}
+
+La raíz epistémica fundacional de la validación **no proviene** de:
+
+-Organismos certificadores ni esquemas normativos cerrados\
+-Acrónimos regulatorios usados como argumento de autoridad\
+-Manuales de cumplimiento ni checklists procedimentales\
+-Software, plataformas o tecnologías propietarias\
+-Narrativas de “mejores prácticas” sin fundamento estocástico
+
+La validación es un acto **técnico**. No un acto **administrativo**.
+
+## Patrocinado por: Analítica Sostenible {.center}
