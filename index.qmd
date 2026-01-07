@@ -125,8 +125,6 @@ p <- readRDS("p2_analisis_estudio_validacion.rds")
 p
 ```
 
-
-
 # Parte II
 
 ## ¿Se Necesita Validar Siempre? {.center}
@@ -224,7 +222,6 @@ p <- readRDS("p4_distribucion_univariable_lognormal.rds")
 p
 
 ```
-
 
 # Parte III
 
@@ -410,7 +407,6 @@ p
 
 ```
 
-
 # Parte V {.center}
 
 ## Validación y Evidencia Formal {.center}
@@ -511,7 +507,6 @@ library(plotly)
 p <- readRDS("p1_ellipsoid_hotelling.rds")
 p
 ```
-
 
 # Parte VI
 
@@ -657,11 +652,6 @@ layout(
       )
 p
 ```
-
-
-
-
-
 
 # Parte VII
 
@@ -902,6 +892,18 @@ p
 
 # Cierre Final
 
+## **Integridad de los Datos**
+
+Reglas de decisión válidas requieren que los datos sean confiables en tres dimensiones:
+
+1.  **Interna:** coherencia y consistencia dentro del sistema.
+
+2.  **Externa:** concordancia y relación con fuentes externas.
+
+3.  **En el tiempo:** estabilidad a lo largo del periodo de interés.
+
+La **validación** somete los datos a pruebas para confirmar estas tres condiciones y detectar riesgos excesivos antes de tomar decisiones.
+
 ## ¿Validar o no validar? {.center}
 
 A menos que sea por contrato o normatividad, nadie está obligado a validar nada: hacerlo es totalmente opcional.
@@ -963,7 +965,7 @@ Presentado por [Q. I. Víctor Soto Del Toro](https://www.linkedin.com/in/qivicto
 *The Methodology of Scientific Research Programmes* (1978)\
 — Evaluación racional de métodos y reglas más allá de recetas normativas.
 
-## {.center}
+##  {.center}
 
 *Síntesis del autor: la validación como autorización explícita del uso responsable de reglas de decisión técnicas bajo incertidumbre cuantificada.*
 
